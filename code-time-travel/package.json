@@ -1,0 +1,54 @@
+{
+  "name": "code-time-travel",
+  "displayName": "Code Time Travel",
+  "description": "Visual timeTravel of code changes",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codeTimeTravel.showTimeTravel",
+        "title": "Show Code TimeTravel",
+        "category": "TimeTravel"
+      },
+      {
+        "command": "codeTimeTravel.clearHistory",
+        "title": "Clear TimeTravel History",
+        "category": "TimeTravel"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "codeTimeTravel.showTimeTravel"
+        },
+        {
+          "command": "codeTimeTravel.clearHistory"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/diff-match-patch": "^1.0.36",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.60.0",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "diff-match-patch": "^1.0.5"
+  }
+}
