@@ -18,14 +18,14 @@ export function activate(context: vscode.ExtensionContext) {
 
   // Register commands
   const showTimelineCommand = vscode.commands.registerCommand(
-    "codeTimeline.showTimeline",
+    "codeTimeTravel.showTimeTravel",
     () => {
       webviewProvider.show();
     }
   );
 
   const clearHistoryCommand = vscode.commands.registerCommand(
-    "codeTimeline.clearHistory",
+    "codeTimeTravel.clearHistory",
     () => {
       timelineManager.clearHistory();
       vscode.window.showInformationMessage("Timeline history cleared!");
@@ -51,8 +51,13 @@ export function activate(context: vscode.ExtensionContext) {
 
   // Show welcome message
   vscode.window.showInformationMessage(
-    'Code Timeline is now tracking your changes! Use "Show Code Timeline" command to view.'
+    'Code Time Travel is now tracking your changes! Use "Show Code Timeline" command to view.'
   );
+
+  // Auto-open the timeline panel on the right
+  setTimeout(() => {
+    webviewProvider.show();
+  }, 1000);
 }
 
 export function deactivate() {
