@@ -1,11 +1,13 @@
 {
   "name": "code-time-travel",
   "displayName": "Code Time Travel",
+  "publisher": "ujjwalBuilds",
   "description": "Visual timeTravel of code changes",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.60.0"
   },
+  "icon": "icon.jpg",
   "categories": [
     "Other"
   ],
